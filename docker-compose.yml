@@ -1,0 +1,5 @@
+services:
+  postgres:
+    extends:
+      file: deployments/docker/docker-compose.yml
+      service: postgres

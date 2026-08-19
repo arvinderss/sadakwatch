@@ -1,0 +1,22 @@
+# Go
+/bin/
+*.test
+*.out
+coverage.out
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local data
+/data/
+/storage/

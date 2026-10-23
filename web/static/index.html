@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SadakWatch</title>
+  <meta name="description" content="Road-condition intelligence from moving vehicles">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true" class="logo"><rect width="32" height="32" rx="7" fill="var(--accent)"/><path d="M11 27 15 5M21 27 17 5" stroke="#15171a" stroke-width="2.4" stroke-linecap="round"/><path d="M16 9v2.5M16 15v2.5M16 21v2.5" stroke="#15171a" stroke-width="2" stroke-linecap="round"/></svg>
+      <div>
+        <h1>SadakWatch</h1>
+        <p>Road-condition intelligence</p>
+      </div>
+    </div>
+    <dl class="kpis" id="kpis">
+      <div><dt>Active defects</dt><dd id="kpi-open">–</dd></div>
+      <div><dt>Resolved</dt><dd id="kpi-resolved">–</dd></div>
+      <div><dt>Observations</dt><dd id="kpi-events">–</dd></div>
+      <div><dt>Vehicles</dt><dd id="kpi-vehicles">–</dd></div>
+      <div><dt>Avg. time to fix</dt><dd id="kpi-fix">–</dd></div>
+    </dl>
+    <div class="live" id="live" title="Auto-refreshes every 20 seconds"><span class="dot"></span><span id="live-text">Live</span></div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="filters" aria-label="Filters">
+        <div class="seg" role="group" aria-label="Status filter" id="status-filter">
+          <button data-status="active" class="on">Active</button>
+          <button data-status="resolved">Resolved</button>
+          <button data-status="">All</button>
+        </div>
+        <div class="chips" id="type-filter" aria-label="Defect types"></div>
+      </section>
+      <section class="board">
+        <div class="board-head">
+          <h2 id="list-title">Defects in view</h2>
+          <span id="list-count" class="mono">0</span>
+        </div>
+        <ol class="defects" id="defect-list"></ol>
+        <p class="empty" id="empty" hidden>No defects in this area yet. Reports from the SadakWatch app appear here as vehicles drive.</p>
+      </section>
+      <section class="leaders" id="leaders"></section>
+    </aside>
+
+    <div class="map-wrap">
+      <div id="map" aria-label="Defect map"></div>
+      <div class="legend" aria-hidden="true">
+        <span><i class="sev-critical"></i>Critical</span>
+        <span><i class="sev-high"></i>High</span>
+        <span><i class="sev-medium"></i>Medium</span>
+        <span><i class="sev-low"></i>Low</span>
+        <span><i class="sev-unknown"></i>Unrated</span>
+      </div>
+    </div>
+
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <button class="close" id="drawer-close" aria-label="Close details">×</button>
+      <div id="drawer-body"></div>
+    </aside>
+  </main>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

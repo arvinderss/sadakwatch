@@ -1,5 +1,5 @@
-services:
-  postgres:
-    extends:
-      file: deployments/docker/docker-compose.yml
-      service: postgres
+# Convenience entry point: `docker compose up -d` starts PostGIS and the API
+# (dashboard at http://localhost:8080). Add `--profile sim` for a simulated
+# vehicle and `--profile vision` for the vision service.
+include:
+  - deployments/docker/docker-compose.yml

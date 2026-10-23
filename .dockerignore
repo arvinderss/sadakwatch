@@ -1,0 +1,6 @@
+.git
+android
+data
+bin
+**/__pycache__
+services/vision/tests

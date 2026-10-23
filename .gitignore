@@ -20,3 +20,7 @@ Thumbs.db
 # Local data
 /data/
 /storage/
+
+# Python
+__pycache__/
+.pytest_cache/

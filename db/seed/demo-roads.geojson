@@ -1,0 +1,497 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      76.773488,
+      30.738382
+     ],
+     [
+      76.773887,
+      30.738703
+     ],
+     [
+      76.77431,
+      30.739001
+     ],
+     [
+      76.774755,
+      30.739275
+     ],
+     [
+      76.77522,
+      30.739524
+     ],
+     [
+      76.775702,
+      30.739745
+     ],
+     [
+      76.7762,
+      30.739939
+     ],
+     [
+      76.776713,
+      30.740105
+     ],
+     [
+      76.777236,
+      30.740242
+     ],
+     [
+      76.777769,
+      30.740348
+     ],
+     [
+      76.778309,
+      30.740425
+     ],
+     [
+      76.778853,
+      30.740471
+     ],
+     [
+      76.7794,
+      30.740486
+     ],
+     [
+      76.779947,
+      30.740471
+     ],
+     [
+      76.780491,
+      30.740425
+     ],
+     [
+      76.781031,
+      30.740348
+     ],
+     [
+      76.781564,
+      30.740242
+     ],
+     [
+      76.782087,
+      30.740105
+     ],
+     [
+      76.7826,
+      30.739939
+     ],
+     [
+      76.783098,
+      30.739745
+     ],
+     [
+      76.78358,
+      30.739524
+     ],
+     [
+      76.784045,
+      30.739275
+     ],
+     [
+      76.78449,
+      30.739001
+     ],
+     [
+      76.784913,
+      30.738703
+     ],
+     [
+      76.785312,
+      30.738382
+     ]
+    ]
+   },
+   "properties": {
+    "external_id": "demo-ring-1",
+    "name": "Demo Ring Road \u2014 North Arc",
+    "authority": "Demo Municipal Corporation",
+    "authority_type": "municipal_corporation",
+    "division": "Roads Division 1",
+    "contractor": "Demo Infra Builders Pvt Ltd",
+    "contract_reference": "DMC/RD1/2025/014",
+    "contract_scope": "Maintenance & defect liability",
+    "valid_from": "2025-01-01",
+    "valid_to": "2027-12-31",
+    "officer": "Er. A. Sharma (demo)",
+    "officer_designation": "Executive Engineer",
+    "source_reference": "DEMO DATA \u2014 fictional, for local testing only"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      76.785312,
+      30.738382
+     ],
+     [
+      76.785686,
+      30.738038
+     ],
+     [
+      76.786033,
+      30.737675
+     ],
+     [
+      76.786352,
+      30.737293
+     ],
+     [
+      76.786641,
+      30.736893
+     ],
+     [
+      76.786898,
+      30.736479
+     ],
+     [
+      76.787124,
+      30.73605
+     ],
+     [
+      76.787317,
+      30.73561
+     ],
+     [
+      76.787476,
+      30.73516
+     ],
+     [
+      76.7876,
+      30.734702
+     ],
+     [
+      76.787689,
+      30.734238
+     ],
+     [
+      76.787743,
+      30.73377
+     ],
+     [
+      76.787761,
+      30.7333
+     ],
+     [
+      76.787743,
+      30.73283
+     ],
+     [
+      76.787689,
+      30.732362
+     ],
+     [
+      76.7876,
+      30.731898
+     ],
+     [
+      76.787476,
+      30.73144
+     ],
+     [
+      76.787317,
+      30.73099
+     ],
+     [
+      76.787124,
+      30.73055
+     ],
+     [
+      76.786898,
+      30.730121
+     ],
+     [
+      76.786641,
+      30.729707
+     ],
+     [
+      76.786352,
+      30.729307
+     ],
+     [
+      76.786033,
+      30.728925
+     ],
+     [
+      76.785686,
+      30.728562
+     ],
+     [
+      76.785312,
+      30.728218
+     ]
+    ]
+   },
+   "properties": {
+    "external_id": "demo-ring-2",
+    "name": "Demo Ring Road \u2014 East Arc",
+    "authority": "Demo Municipal Corporation",
+    "authority_type": "municipal_corporation",
+    "division": "Roads Division 1",
+    "contractor": "Sample Constructions Co.",
+    "contract_reference": "DMC/RD1/2025/022",
+    "contract_scope": "Maintenance & defect liability",
+    "valid_from": "2025-01-01",
+    "valid_to": "2027-12-31",
+    "officer": "Er. A. Sharma (demo)",
+    "officer_designation": "Executive Engineer",
+    "source_reference": "DEMO DATA \u2014 fictional, for local testing only"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      76.785312,
+      30.728218
+     ],
+     [
+      76.784913,
+      30.727897
+     ],
+     [
+      76.78449,
+      30.727599
+     ],
+     [
+      76.784045,
+      30.727325
+     ],
+     [
+      76.78358,
+      30.727076
+     ],
+     [
+      76.783098,
+      30.726855
+     ],
+     [
+      76.7826,
+      30.726661
+     ],
+     [
+      76.782087,
+      30.726495
+     ],
+     [
+      76.781564,
+      30.726358
+     ],
+     [
+      76.781031,
+      30.726252
+     ],
+     [
+      76.780491,
+      30.726175
+     ],
+     [
+      76.779947,
+      30.726129
+     ],
+     [
+      76.7794,
+      30.726114
+     ],
+     [
+      76.778853,
+      30.726129
+     ],
+     [
+      76.778309,
+      30.726175
+     ],
+     [
+      76.777769,
+      30.726252
+     ],
+     [
+      76.777236,
+      30.726358
+     ],
+     [
+      76.776713,
+      30.726495
+     ],
+     [
+      76.7762,
+      30.726661
+     ],
+     [
+      76.775702,
+      30.726855
+     ],
+     [
+      76.77522,
+      30.727076
+     ],
+     [
+      76.774755,
+      30.727325
+     ],
+     [
+      76.77431,
+      30.727599
+     ],
+     [
+      76.773887,
+      30.727897
+     ],
+     [
+      76.773488,
+      30.728218
+     ]
+    ]
+   },
+   "properties": {
+    "external_id": "demo-ring-3",
+    "name": "Demo Ring Road \u2014 South Arc",
+    "authority": "Demo State PWD",
+    "authority_type": "public_works_department",
+    "division": "PWD Circle 3",
+    "contractor": "Fictional Highways Ltd",
+    "contract_reference": "PWD/C3/2024/107",
+    "contract_scope": "Maintenance & defect liability",
+    "valid_from": "2025-01-01",
+    "valid_to": "2027-12-31",
+    "officer": "Er. R. Kaur (demo)",
+    "officer_designation": "Assistant Engineer",
+    "source_reference": "DEMO DATA \u2014 fictional, for local testing only"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      76.773488,
+      30.728218
+     ],
+     [
+      76.773114,
+      30.728562
+     ],
+     [
+      76.772767,
+      30.728925
+     ],
+     [
+      76.772448,
+      30.729307
+     ],
+     [
+      76.772159,
+      30.729707
+     ],
+     [
+      76.771902,
+      30.730121
+     ],
+     [
+      76.771676,
+      30.73055
+     ],
+     [
+      76.771483,
+      30.73099
+     ],
+     [
+      76.771324,
+      30.73144
+     ],
+     [
+      76.7712,
+      30.731898
+     ],
+     [
+      76.771111,
+      30.732362
+     ],
+     [
+      76.771057,
+      30.73283
+     ],
+     [
+      76.771039,
+      30.7333
+     ],
+     [
+      76.771057,
+      30.73377
+     ],
+     [
+      76.771111,
+      30.734238
+     ],
+     [
+      76.7712,
+      30.734702
+     ],
+     [
+      76.771324,
+      30.73516
+     ],
+     [
+      76.771483,
+      30.73561
+     ],
+     [
+      76.771676,
+      30.73605
+     ],
+     [
+      76.771902,
+      30.736479
+     ],
+     [
+      76.772159,
+      30.736893
+     ],
+     [
+      76.772448,
+      30.737293
+     ],
+     [
+      76.772767,
+      30.737675
+     ],
+     [
+      76.773114,
+      30.738038
+     ],
+     [
+      76.773488,
+      30.738382
+     ]
+    ]
+   },
+   "properties": {
+    "external_id": "demo-ring-4",
+    "name": "Demo Ring Road \u2014 West Arc",
+    "authority": "Demo State PWD",
+    "authority_type": "public_works_department",
+    "division": "PWD Circle 3",
+    "contractor": "Placeholder Paving LLP",
+    "contract_reference": "PWD/C3/2026/003",
+    "contract_scope": "Maintenance & defect liability",
+    "valid_from": "2025-01-01",
+    "valid_to": "2027-12-31",
+    "officer": "Er. R. Kaur (demo)",
+    "officer_designation": "Assistant Engineer",
+    "source_reference": "DEMO DATA \u2014 fictional, for local testing only"
+   }
+  }
+ ]
+}

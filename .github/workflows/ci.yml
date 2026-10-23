@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, bootstrap]
+    branches: [main, bootstrap, 'feat/**']
   pull_request:
 
 permissions:
@@ -11,18 +11,51 @@ permissions:
 jobs:
   go:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgis/postgis:17-3.5
+        env:
+          POSTGRES_DB: sadakwatch
+          POSTGRES_USER: sadakwatch
+          POSTGRES_PASSWORD: sadakwatch
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U sadakwatch -d sadakwatch"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      TEST_DATABASE_URL: postgres://sadakwatch:sadakwatch@localhost:5432/sadakwatch?sslmode=disable
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: '1.24.x'
-      - name: Download dependencies
-        run: go mod download
+          go-version-file: go.mod
       - name: Format check
-        run: test -z "$(gofmt -l cmd internal)"
-      - name: Test
-        run: go test ./...
-      - name: Build API
-        run: go build ./cmd/api
-      - name: Build edge agent
-        run: go build ./cmd/edge-agent
+        run: test -z "$(gofmt -l cmd internal web db)"
+      - name: Vet
+        run: go vet ./...
+      - name: Test (unit + PostGIS integration)
+        run: go test -race -count=1 ./...
+      - name: Build
+        run: |
+          go build -o bin/api ./cmd/api
+          go build -o bin/edge-agent ./cmd/edge-agent
+
+  vision:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/vision
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt pytest httpx
+      - run: pytest -q
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build API image
+        run: docker build -t sadakwatch-api .

@@ -10,12 +10,57 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ../../db/migrations:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U sadakwatch -d sadakwatch"]
       interval: 5s
       timeout: 5s
       retries: 10
 
+  api:
+    build:
+      context: ../..
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://sadakwatch:sadakwatch@postgres:5432/sadakwatch?sslmode=disable
+      INGEST_API_KEYS: ${INGEST_API_KEYS:-}
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-}
+      ADMIN_TIMEZONE: ${ADMIN_TIMEZONE:-Asia/Kolkata}
+    ports:
+      - "8080:8080"
+    volumes:
+      - media_data:/data
+
+  vision:
+    profiles: ["vision"]
+    build:
+      context: ../../services/vision
+    environment:
+      VISION_BACKEND: ${VISION_BACKEND:-none}
+      MODEL_PATH: ${MODEL_PATH:-}
+    ports:
+      - "8090:8090"
+
+  # A simulated vehicle that drives a loop and reports defects: `--profile sim`.
+  edge-sim:
+    profiles: ["sim"]
+    build:
+      context: ../..
+    command: ["/usr/local/bin/edge-agent"]
+    depends_on: [api]
+    environment:
+      API_URL: http://api:8080
+      API_KEY: ${INGEST_API_KEYS:-}
+      SIMULATE: "1"
+      VEHICLE_ID: sim-bus-1
+      SIM_LAT: ${SIM_LAT:-30.7333}
+      SIM_LON: ${SIM_LON:-76.7794}
+    volumes:
+      - edge_data:/data
+
 volumes:
   postgres_data:
+  media_data:
+  edge_data:

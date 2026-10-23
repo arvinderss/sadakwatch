@@ -22,7 +22,17 @@ Images and event video clips are stored outside PostgreSQL. PostgreSQL stores ob
 
 ## Deduplication
 
-Repeated detections of the same physical defect will be clustered spatially and temporally. A future defect entity will represent the persistent issue while raw observations remain auditable.
+Each event is merged into the nearest open defect of the same type within a per-type radius (15 m for point defects such as potholes, 40 m for area defects such as waterlogging, widened by poor GPS accuracy up to 60 m). The defect position is the running mean of its observations, its severity is the worst observed, and raw events stay linked and auditable. A transaction-scoped advisory lock per type and ~1 km cell prevents two vehicles from creating twin defects at the same moment. A detection near a defect closed in the last 180 days opens a new defect with `recurrence_of` pointing at the old one — evidence that a repair did not hold.
+
+## Remediation
+
+Defects move through `open → acknowledged → in_progress → resolved` (or `rejected`), and can be reopened. Every change is stored in `defect_status_history` with a note and actor.
+
+## Clients
+
+* `android/` — phones as sensors (accelerometer, camera, GPS, offline queue, WorkManager uploads).
+* `cmd/edge-agent` — Linux dashcam computers (frames directory, vision service, NMEA GPS, file queue).
+* `web/` — dashboard embedded in the API binary.
 
 ## Planned services
 

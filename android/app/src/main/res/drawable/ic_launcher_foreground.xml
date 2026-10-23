@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Two converging road edges with a dashed centre line -->
+    <path
+        android:pathData="M42,80 L50,28"
+        android:strokeColor="#15171A"
+        android:strokeWidth="6"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M66,80 L58,28"
+        android:strokeColor="#15171A"
+        android:strokeWidth="6"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M54,36 L54,42 M54,50 L54,57 M54,65 L54,73"
+        android:strokeColor="#15171A"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+</vector>
